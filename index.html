@@ -3,305 +3,1335 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laimat Credit IQ – Loan Relief Platform</title>
+  <title>Laimat Credit IQ – Kenya's Leading Debt Relief Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Add Alpine.js for toggling -->
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #0f766e 0%, #14b8a6 50%, #5eead4 100%);
+    }
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 0.8s ease-in forwards;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .stats-counter {
+      transition: all 0.3s ease;
+    }
+    
+    .hover-lift {
+      transition: transform 0.3s ease;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-5px);
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-  <header class="sticky top-0 inset-x-0 z-50 bg-teal-600 shadow-md" x-data="{ open: false }">
-  <nav class="container mx-auto flex items-center justify-between px-6 py-4">
-    <!-- Logo -->
-    <div class="flex items-center space-x-2">
-      <img src="creditiq-logo.png" alt="Laimat Credit IQ" class="h-10 w-auto">
-    </div>
-
-    <!-- Desktop Menu -->
-    <div class="hidden md:flex items-center space-x-8 text-white font-medium">
-      <a href="#how" class="hover:text-teal-200 transition">How It Works</a>
-      <a href="#services" class="hover:text-teal-200 transition">Services</a>
-      <a href="#pricing" class="hover:text-teal-200 transition">Pricing</a>
-      <a href="#contact" class="hover:text-teal-200 transition">Contact</a>
-      <a href="#login" class="px-4 py-2 rounded-lg border border-white hover:bg-white hover:text-teal-600 transition">Login</a>
-      <a href="#signup" class="px-4 py-2 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-100 transition">Sign Up</a>
-    </div>
-
-    <!-- Mobile Menu Button -->
-    <button class="md:hidden text-white focus:outline-none" @click="open = !open">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-  </nav>
-
-  <!-- Mobile Slide-in Menu -->
-  <div class="md:hidden fixed inset-y-0 right-0 w-64 bg-teal-700 shadow-lg transform transition-transform duration-300 ease-in-out"
-       x-show="open"
-       x-transition:enter="translate-x-full"
-       x-transition:enter-start="translate-x-full"
-       x-transition:enter-end="translate-x-0"
-       x-transition:leave="translate-x-0"
-       x-transition:leave-start="translate-x-0"
-       x-transition:leave-end="translate-x-full"
-       @click.away="open = false">
-    <div class="flex flex-col p-6 space-y-6 text-white font-medium">
-      <a href="#how" class="hover:text-teal-200 transition">How It Works</a>
-      <a href="#services" class="hover:text-teal-200 transition">Services</a>
-      <a href="#pricing" class="hover:text-teal-200 transition">Pricing</a>
-      <a href="#contact" class="hover:text-teal-200 transition">Contact</a>
-      <a href="#login" class="px-4 py-2 rounded-lg border border-white hover:bg-white hover:text-teal-600 transition">Login</a>
-      <a href="#signup" class="px-4 py-2 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-100 transition">Sign Up</a>
-    </div>
-  </div>
-</header>
-
-<!-- Hero Section -->
-<section class="relative bg-gray-900">
-  <!-- Background Image -->
-  <div class="absolute inset-0">
-    <img class="w-full h-full object-cover" src="image3.jpg" alt="Debt relief">
-    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-transparent"></div>
-  </div>
-
-  <!-- Content -->
-  <div class="relative container mx-auto px-6 py-32 md:py-48 text-center md:text-left text-white">
-    <!-- Badge -->
-    <!-- <div class="inline-block  text-white text-xs md:text-sm px-3 py-1 rounded-full uppercase tracking-wide shadow-md mb-6">
-      Trusted Debt Relief for Kenyans
-    </div> -->
-
-    <!-- Heading -->
-    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight max-w-3xl mx-auto md:mx-0">
-      Debt Relief <span class="text-teal-400">Made Simple</span>
-    </h1>
-
-    <!-- Subheading -->
-    <p class="mt-6 text-lg md:text-2xl max-w-2xl mx-auto md:mx-0 text-gray-200">
-      Kenya’s first 360° loan relief platform. Consolidate, restructure, and rebuild your credit today.
-    </p>
-
-    <!-- CTA Buttons -->
-    <div class="mt-8 flex flex-col sm:flex-row sm:justify-start justify-center gap-4">
-      <a href="#start" class="px-8 py-4 bg-teal-500 text-white text-lg rounded-xl font-semibold shadow-lg hover:bg-teal-600 transition">
-        Start My Free Assessment
-      </a>
-      <a href="#services" class="px-8 py-4 bg-white text-teal-600 text-lg rounded-xl font-semibold shadow-lg hover:bg-gray-100 transition">
-        Learn How It Works
-      </a>
-    </div>
-  </div>
-</section>
-
-
-
-  <!-- How It Works -->
-<section class="bg-gray-50 py-20" id="how">
-  <div class="container mx-auto px-6">
-    <!-- Heading -->
-    <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-800">
-      How It Works
-    </h2>
-    <p class="mt-4 text-center text-gray-600 max-w-2xl mx-auto">
-      In just four simple steps, Laimat CreditIQ helps you understand your debt, explore relief options, and take action confidently.
-    </p>
-
-    <!-- Steps -->
-    <div class="mt-16 grid md:grid-cols-4 gap-10">
-      <!-- Step 1 -->
-      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition text-center">
-        <div class="w-14 h-14 mx-auto flex items-center justify-center bg-teal-500 text-white text-xl font-bold rounded-full shadow-md">
-          1
+  <!-- Header -->
+  <header class="sticky top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-md shadow-lg border-b" x-data="{ open: false }">
+    <nav class="container mx-auto flex items-center justify-between px-6 py-4">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-teal-500 to-teal-700 rounded-xl flex items-center justify-center">
+          <span class="text-white font-bold text-lg">L</span>
         </div>
-        <!-- <img src="https://source.unsplash.com/400x250/?form,loan" class="mx-auto mt-6 rounded-lg shadow-md" alt="Input Loan Details"> -->
-        <h3 class="mt-6 font-semibold text-lg text-gray-800">Input Your Loan Details</h3>
-        <p class="mt-3 text-sm text-gray-600">
-          Quickly tell us about your debts—loans, credit cards, Sacco loans, and more.
-        </p>
+        <div>
+          <h1 class="text-xl font-bold text-gray-900">Laimat Credit IQ</h1>
+          <p class="text-xs text-gray-500">Debt Relief Platform</p>
+        </div>
       </div>
 
-      <!-- Step 2 -->
-      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition text-center">
-        <div class="w-14 h-14 mx-auto flex items-center justify-center bg-teal-500 text-white text-xl font-bold rounded-full shadow-md">
-          2
-        </div>
-        <!-- <img src="https://source.unsplash.com/400x250/?analytics,chart" class="mx-auto mt-6 rounded-lg shadow-md" alt="Credit Profile"> -->
-        <h3 class="mt-6 font-semibold text-lg text-gray-800">See Your Profile</h3>
-        <p class="mt-3 text-sm text-gray-600">
-          We analyze your CRB, income, and expenses to build your full credit picture.
-        </p>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
+        <a href="#how" class="hover:text-teal-600 transition">How It Works</a>
+        <a href="#services" class="hover:text-teal-600 transition">Services</a>
+        <a href="#why-us" class="hover:text-teal-600 transition">Why Choose Us</a>
+        <a href="#pricing" class="hover:text-teal-600 transition">Pricing</a>
+        <a href="#faq" class="hover:text-teal-600 transition">FAQ</a>
+        <a href="#contact" class="hover:text-teal-600 transition">Contact</a>
+        <a href="#login" class="px-4 py-2 rounded-lg border border-teal-600 text-teal-600 hover:bg-teal-50 transition">Login</a>
+        <a href="#signup" class="px-6 py-2 bg-gradient-to-r from-teal-600 to-teal-700 text-white font-semibold rounded-lg hover:from-teal-700 hover:to-teal-800 transition shadow-lg">Get Started</a>
       </div>
 
-      <!-- Step 3 -->
-      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition text-center">
-        <div class="w-14 h-14 mx-auto flex items-center justify-center bg-teal-500 text-white text-xl font-bold rounded-full shadow-md">
-          3
-        </div>
-        <!-- <img src="https://source.unsplash.com/400x250/?bank,lender" class="mx-auto mt-6 rounded-lg shadow-md" alt="Explore Options"> -->
-        <h3 class="mt-6 font-semibold text-lg text-gray-800">Explore Your Options</h3>
-        <p class="mt-3 text-sm text-gray-600">
-          Compare consolidation, restructuring, or negotiation paths tailored for you.
-        </p>
-      </div>
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-gray-700 focus:outline-none" @click="open = !open">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </nav>
 
-      <!-- Step 4 -->
-      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition text-center">
-        <div class="w-14 h-14 mx-auto flex items-center justify-center bg-teal-500 text-white text-xl font-bold rounded-full shadow-md">
-          4
+    <!-- Mobile Menu -->
+    <div class="md:hidden fixed inset-y-0 right-0 w-64 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out"
+         x-show="open"
+         x-transition:enter="translate-x-full"
+         x-transition:enter-start="translate-x-full"
+         x-transition:enter-end="translate-x-0"
+         x-transition:leave="translate-x-0"
+         x-transition:leave-start="translate-x-0"
+         x-transition:leave-end="translate-x-full"
+         @click.away="open = false">
+      <div class="flex flex-col p-6 space-y-6 text-gray-700 font-medium">
+        <a href="#how" class="hover:text-teal-600 transition">How It Works</a>
+        <a href="#services" class="hover:text-teal-600 transition">Services</a>
+        <a href="#why-us" class="hover:text-teal-600 transition">Why Choose Us</a>
+        <a href="#pricing" class="hover:text-teal-600 transition">Pricing</a>
+        <a href="#faq" class="hover:text-teal-600 transition">FAQ</a>
+        <a href="#contact" class="hover:text-teal-600 transition">Contact</a>
+        <div class="space-y-3 pt-4 border-t">
+          <a href="#login" class="block text-center px-4 py-2 rounded-lg border border-teal-600 text-teal-600 hover:bg-teal-50 transition">Login</a>
+          <a href="#signup" class="block text-center px-4 py-2 bg-gradient-to-r from-teal-600 to-teal-700 text-white font-semibold rounded-lg hover:from-teal-700 hover:to-teal-800 transition">Get Started</a>
         </div>
-        <!-- <img src="https://source.unsplash.com/400x250/?agreement,handshake" class="mx-auto mt-6 rounded-lg shadow-md" alt="Take Action"> -->
-        <h3 class="mt-6 font-semibold text-lg text-gray-800">Take Action</h3>
-        <p class="mt-3 text-sm text-gray-600">
-          Work with trusted lenders and service providers right inside our marketplace.
-        </p>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden">
+    <div class="gradient-bg">
+      <div class="container mx-auto px-6 py-20 md:py-28">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Content -->
+          <div class="text-white animate-fade-in">
+            <!-- Trust Badge -->
+            <div class="inline-flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur">
+              <i class="fas fa-shield-alt text-green-300"></i>
+              <span>Trusted by 10,000+ Kenyans</span>
+            </div>
 
- <!-- Services -->
-<section id="services" class="bg-gray-50 py-20">
-  <div class="container mx-auto px-6">
-    <!-- Heading -->
-    <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-800">
-      Our Services
-    </h2>
-    <p class="mt-4 text-center text-gray-600 max-w-2xl mx-auto">
-      A complete suite of solutions designed to help you regain control of your finances and build a brighter future.
-    </p>
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+              Break Free from 
+              <span class="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+                Debt Stress
+              </span>
+            </h1>
 
-    <!-- Services Grid -->
-    <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-      <!-- Service 1 -->
-      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-        <div class="w-14 h-14 flex items-center justify-center bg-teal-100 text-teal-600 rounded-full text-2xl mb-6">
-          💳
+            <p class="text-xl md:text-2xl mb-8 text-teal-50 leading-relaxed">
+              Kenya's most comprehensive debt relief platform. Consolidate loans, repair your CRB, and regain financial freedom with expert guidance.
+            </p>
+
+            <!-- Key Benefits -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              <div class="flex items-center space-x-3">
+                <div class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center">
+                  <i class="fas fa-check text-sm text-green-900"></i>
+                </div>
+                <span class="text-teal-50">Free Credit Assessment</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center">
+                  <i class="fas fa-check text-sm text-green-900"></i>
+                </div>
+                <span class="text-teal-50">Expert Negotiation</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center">
+                  <i class="fas fa-check text-sm text-green-900"></i>
+                </div>
+                <span class="text-teal-50">CRB Score Repair</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center">
+                  <i class="fas fa-check text-sm text-green-900"></i>
+                </div>
+                <span class="text-teal-50">Lower Monthly Payments</span>
+              </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="#start" class="px-8 py-4 bg-white text-teal-700 text-lg font-bold rounded-xl shadow-xl hover:bg-gray-100 transition hover-lift text-center">
+                <i class="fas fa-rocket mr-2"></i>
+                Start Free Assessment
+              </a>
+              <a href="#how" class="px-8 py-4 glass-card text-white text-lg font-semibold rounded-xl hover:bg-white/20 transition text-center">
+                <i class="fas fa-play mr-2"></i>
+                Watch How It Works
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Content - Stats Card -->
+          <div class="animate-fade-in">
+            <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
+              <h3 class="text-2xl font-bold text-white mb-6 text-center">Our Impact</h3>
+              <div class="grid grid-cols-2 gap-6">
+                <div class="text-center">
+                  <div class="text-4xl font-bold text-yellow-300 mb-2">KES 2.8B+</div>
+                  <div class="text-teal-100 text-sm">Debt Consolidated</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl font-bold text-yellow-300 mb-2">10,000+</div>
+                  <div class="text-teal-100 text-sm">Lives Changed</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl font-bold text-yellow-300 mb-2">65%</div>
+                  <div class="text-teal-100 text-sm">Average Reduction</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl font-bold text-yellow-300 mb-2">4.8★</div>
+                  <div class="text-teal-100 text-sm">Client Rating</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <h3 class="font-semibold text-xl text-gray-800 mb-3">Debt Consolidation</h3>
-        <p class="text-gray-600">
-          Combine all your debts into one affordable monthly payment. We match you with qualified lenders.
-        </p>
       </div>
-
-      <!-- Service 2 -->
-      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-        <div class="w-14 h-14 flex items-center justify-center bg-teal-100 text-teal-600 rounded-full text-2xl mb-6">
-          🔄
-        </div>
-        <h3 class="font-semibold text-xl text-gray-800 mb-3">Debt Restructuring</h3>
-        <p class="text-gray-600">
-          Renegotiate repayment terms—longer schedules, lower installments, or reduced penalties.
-        </p>
-      </div>
-
-      <!-- Service 3 -->
-      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-        <div class="w-14 h-14 flex items-center justify-center bg-teal-100 text-teal-600 rounded-full text-2xl mb-6">
-          🤝
-        </div>
-        <h3 class="font-semibold text-xl text-gray-800 mb-3">Debt Negotiation</h3>
-        <p class="text-gray-600">
-          Our experts negotiate with creditors on your behalf to stop harassment and reduce penalties.
-        </p>
-      </div>
-
-      <!-- Service 4 -->
-      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-        <div class="w-14 h-14 flex items-center justify-center bg-teal-100 text-teal-600 rounded-full text-2xl mb-6">
-          📝
-        </div>
-        <h3 class="font-semibold text-xl text-gray-800 mb-3">CRB Services</h3>
-        <p class="text-gray-600">
-          We pull your records from all major CRBs, help fix errors, and improve your credit score.
-        </p>
-      </div>
-
-      <!-- Service 5 -->
-      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-        <div class="w-14 h-14 flex items-center justify-center bg-teal-100 text-teal-600 rounded-full text-2xl mb-6">
-          📊
-        </div>
-        <h3 class="font-semibold text-xl text-gray-800 mb-3">Analytics & Insights</h3>
-        <p class="text-gray-600">
-          Track your debt exposure, income balance, and eligibility with your Credit IQ Dashboard.
-        </p>
-      </div>
-
-      <!-- Service 6 -->
-      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-        <div class="w-14 h-14 flex items-center justify-center bg-teal-100 text-teal-600 rounded-full text-2xl mb-6">
-          🌐
-        </div>
-        <h3 class="font-semibold text-xl text-gray-800 mb-3">Affiliate Marketplace</h3>
-        <p class="text-gray-600">
-          Access trusted partners for savings, insurance, and financial growth opportunities.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Pricing -->
-  <section class="container mx-auto px-6 py-16 text-center">
-    <h2 class="text-3xl font-bold">Simple, Transparent Pricing</h2>
-    <p class="mt-4">One-time flat fee of <span class="font-bold text-teal-600">KES 1,000</span>. Covers CRB verification & data validation.</p>
-    <div class="mt-6">
-      <a href="#start" class="px-8 py-4 bg-teal-500 text-white rounded-lg font-semibold hover:bg-teal-600">Activate My Account</a>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="bg-gray-100 py-16">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold">What Our Users Say</h2>
-      <div class="mt-10 grid md:grid-cols-2 gap-8">
-        <div class="bg-white p-6 rounded-xl shadow">
-          <p class="italic">“I combined 5 loans into 1 simple plan. Now I actually sleep at night.”</p>
-          <h4 class="mt-4 font-semibold">– Mary, Nairobi</h4>
+  <!-- Trust Indicators -->
+  <section class="py-12 bg-white border-b">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-8">
+        <p class="text-gray-600 font-medium">Trusted by leading financial institutions</p>
+      </div>
+      <div class="flex justify-center items-center space-x-12 opacity-60">
+        <div class="text-2xl font-bold text-gray-400">CBK Registered</div>
+        <div class="text-2xl font-bold text-gray-400">TransUnion Partner</div>
+        <div class="text-2xl font-bold text-gray-400">Metropol CRB</div>
+        <div class="text-2xl font-bold text-gray-400">CreditInfo Partner</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Statement -->
+  <section class="py-20 bg-red-50">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          Are You Drowning in Multiple Loan Payments?
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8 mt-12">
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-exclamation-triangle text-2xl text-red-600"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-3">Multiple Payments</h3>
+            <p class="text-gray-600">Juggling 3+ different loan payments every month</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-phone-slash text-2xl text-red-600"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-3">Constant Harassment</h3>
+            <p class="text-gray-600">Daily calls and messages from lenders and debt collectors</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-chart-line-down text-2xl text-red-600"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-3">Poor Credit Score</h3>
+            <p class="text-gray-600">Blacklisted on CRB, unable to access new credit</p>
+          </div>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow">
-          <p class="italic">“The CRB repair service boosted my score. I can now access better terms with my Sacco.”</p>
-          <h4 class="mt-4 font-semibold">– Peter, Kisumu</h4>
+        <div class="mt-12">
+          <a href="#services" class="inline-flex items-center px-8 py-4 bg-teal-600 text-white font-bold rounded-xl hover:bg-teal-700 transition">
+            See How We Can Help <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-20 bg-gray-50" id="how">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          How It Works
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Our proven 4-step process has helped thousands of Kenyans regain control of their finances
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Step 1 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center relative">
+          <div class="w-16 h-16 mx-auto flex items-center justify-center bg-gradient-to-br from-teal-500 to-teal-700 text-white text-2xl font-bold rounded-full shadow-lg mb-6">
+            1
+          </div>
+          <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-clipboard-list text-teal-600 text-xl"></i>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900 mb-3">Complete Assessment</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Provide details about all your debts - bank loans, mobile loans, Sacco debts, and credit cards
+          </p>
+          <!-- Arrow for desktop -->
+          <div class="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2">
+            <i class="fas fa-arrow-right text-teal-300 text-2xl"></i>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center relative">
+          <div class="w-16 h-16 mx-auto flex items-center justify-center bg-gradient-to-br from-teal-500 to-teal-700 text-white text-2xl font-bold rounded-full shadow-lg mb-6">
+            2
+          </div>
+          <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-search text-teal-600 text-xl"></i>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900 mb-3">Credit Analysis</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We pull your CRB reports and analyze your complete financial picture including income and expenses
+          </p>
+          <div class="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2">
+            <i class="fas fa-arrow-right text-teal-300 text-2xl"></i>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center relative">
+          <div class="w-16 h-16 mx-auto flex items-center justify-center bg-gradient-to-br from-teal-500 to-teal-700 text-white text-2xl font-bold rounded-full shadow-lg mb-6">
+            3
+          </div>
+          <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-route text-teal-600 text-xl"></i>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900 mb-3">Custom Solution</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Get personalized recommendations - consolidation, restructuring, or negotiation based on your situation
+          </p>
+          <div class="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2">
+            <i class="fas fa-arrow-right text-teal-300 text-2xl"></i>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center">
+          <div class="w-16 h-16 mx-auto flex items-center justify-center bg-gradient-to-br from-teal-500 to-teal-700 text-white text-2xl font-bold rounded-full shadow-lg mb-6">
+            4
+          </div>
+          <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-handshake text-teal-600 text-xl"></i>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900 mb-3">Execute & Monitor</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We handle negotiations with lenders and provide ongoing monitoring through your dashboard
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="#start" class="inline-flex items-center px-10 py-4 bg-gradient-to-r from-teal-600 to-teal-700 text-white font-bold rounded-xl hover:from-teal-700 hover:to-teal-800 transition shadow-lg">
+          Start Your Free Assessment <i class="fas fa-rocket ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Comprehensive Debt Relief Services
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Everything you need to regain financial freedom, all in one platform
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="bg-gradient-to-br from-teal-50 to-teal-100 p-8 rounded-2xl hover-lift border border-teal-200">
+          <div class="w-14 h-14 flex items-center justify-center bg-teal-600 text-white rounded-xl text-2xl mb-6">
+            <i class="fas fa-compress-arrows-alt"></i>
+          </div>
+          <h3 class="font-bold text-xl text-gray-900 mb-4">Debt Consolidation</h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Combine multiple debts into one manageable payment. Reduce your monthly burden by up to 60%.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li class="flex items-center"><i class="fas fa-check text-teal-600 mr-2"></i> Lower interest rates</li>
+            <li class="flex items-center"><i class="fas fa-check text-teal-600 mr-2"></i> Single monthly payment</li>
+            <li class="flex items-center"><i class="fas fa-check text-teal-600 mr-2"></i> Extended repayment terms</li>
+          </ul>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl hover-lift border border-blue-200">
+          <div class="w-14 h-14 flex items-center justify-center bg-blue-600 text-white rounded-xl text-2xl mb-6">
+            <i class="fas fa-edit"></i>
+          </div>
+          <h3 class="font-bold text-xl text-gray-900 mb-4">Debt Restructuring</h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Negotiate better terms with your existing lenders. Reduce penalties and extend payment periods.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Penalty reduction</li>
+            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Extended timelines</li>
+            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Lower monthly installments</li>
+          </ul>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl hover-lift border border-purple-200">
+          <div class="w-14 h-14 flex items-center justify-center bg-purple-600 text-white rounded-xl text-2xl mb-6">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3 class="font-bold text-xl text-gray-900 mb-4">Expert Negotiation</h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Our certified negotiators handle all creditor communications. Stop the harassment calls.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i> Professional representation</li>
+            <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i> Settlement negotiations</li>
+            <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i> Legal protection</li>
+          </ul>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl hover-lift border border-green-200">
+          <div class="w-14 h-14 flex items-center justify-center bg-green-600 text-white rounded-xl text-2xl mb-6">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="font-bold text-xl text-gray-900 mb-4">CRB Repair & Monitoring</h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Clean up your credit report and improve your score. Get access to better financial products.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> Error dispute resolution</li>
+            <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> Score improvement strategies</li>
+            <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> Monthly monitoring</li>
+          </ul>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-2xl hover-lift border border-orange-200">
+          <div class="w-14 h-14 flex items-center justify-center bg-orange-600 text-white rounded-xl text-2xl mb-6">
+            <i class="fas fa-chart-pie"></i>
+          </div>
+          <h3 class="font-bold text-xl text-gray-900 mb-4">Financial Analytics</h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Track your debt-to-income ratio, payment progress, and financial health metrics.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li class="flex items-center"><i class="fas fa-check text-orange-600 mr-2"></i> Real-time dashboard</li>
+            <li class="flex items-center"><i class="fas fa-check text-orange-600 mr-2"></i> Progress tracking</li>
+            <li class="flex items-center"><i class="fas fa-check text-orange-600 mr-2"></i> Financial insights</li>
+          </ul>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-8 rounded-2xl hover-lift border border-pink-200">
+          <div class="w-14 h-14 flex items-center justify-center bg-pink-600 text-white rounded-xl text-2xl mb-6">
+            <i class="fas fa-store"></i>
+          </div>
+          <h3 class="font-bold text-xl text-gray-900 mb-4">Financial Marketplace</h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Access vetted financial products - savings accounts, insurance, and investment opportunities.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li class="flex items-center"><i class="fas fa-check text-pink-600 mr-2"></i> Curated products</li>
+            <li class="flex items-center"><i class="fas fa-check text-pink-600 mr-2"></i> Better rates</li>
+            <li class="flex items-center"><i class="fas fa-check text-pink-600 mr-2"></i> Trusted partners</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why-us" class="py-20 bg-gray-900 text-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Why 10,000+ Kenyans Trust Laimat Credit IQ
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          We're not just another debt relief company. We're your long-term financial wellness partner.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-university text-3xl"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-3">CBK Registered</h3>
+          <p class="text-gray-300 text-sm">
+            Licensed and regulated by Central Bank of Kenya for your protection and peace of mind.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-shield-alt text-3xl"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-3">100% Secure</h3>
+          <p class="text-gray-300 text-sm">
+            Bank-level encryption and security protocols to protect your sensitive financial data.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-users text-3xl"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-3">Expert Team</h3>
+          <p class="text-gray-300 text-sm">
+            Certified financial advisors and debt specialists with 10+ years of local market experience.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-clock text-3xl"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-3">24/7 Support</h3>
+          <p class="text-gray-300 text-sm">
+            Round-the-clock customer support via phone, email, and WhatsApp whenever you need help.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-16 bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-bold text-teal-400 mb-2">98%</div>
+            <div class="text-gray-300">Success Rate</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-teal-400 mb-2">30 Days</div>
+            <div class="text-gray-300">Average Resolution</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-teal-400 mb-2">KES 150K</div>
+            <div class="text-gray-300">Average Savings</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="py-20 bg-gradient-to-br from-teal-50 to-blue-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Real Stories, Real Results
+        </h2>
+        <p class="text-xl text-gray-600">
+          See how we've helped Kenyans just like you regain their financial freedom
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-user text-teal-600"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Mary Wanjiku</h4>
+              <p class="text-sm text-gray-600">Teacher, Nairobi</p>
+            </div>
+          </div>
+          <div class="flex mb-4">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+          <p class="text-gray-700 italic leading-relaxed">
+            "I had 5 different loans totaling KES 800K. Laimat helped me consolidate everything into one payment of KES 35K per month. I finally sleep peacefully!"
+          </p>
+          <div class="mt-6 pt-4 border-t border-gray-100">
+            <div class="text-sm text-gray-600">
+              <span class="font-semibold text-teal-600">Result:</span> 60% reduction in monthly payments
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-user text-teal-600"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Peter Kiprotich</h4>
+              <p class="text-sm text-gray-600">Business Owner, Kisumu</p>
+            </div>
+          </div>
+          <div class="flex mb-4">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+          <p class="text-gray-700 italic leading-relaxed">
+            "My CRB score was 480. After 6 months with Laimat's CRB repair service, it's now 720. I got approved for a business loan at 12% interest!"
+          </p>
+          <div class="mt-6 pt-4 border-t border-gray-100">
+            <div class="text-sm text-gray-600">
+              <span class="font-semibold text-teal-600">Result:</span> 240 point CRB score improvement
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-user text-teal-600"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Grace Mutindi</h4>
+              <p class="text-sm text-gray-600">Nurse, Mombasa</p>
+            </div>
+          </div>
+          <div class="flex mb-4">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+          <p class="text-gray-700 italic leading-relaxed">
+            "The harassment calls stopped within 2 weeks. Laimat negotiated with my creditors and reduced my total debt from KES 1.2M to KES 650K."
+          </p>
+          <div class="mt-6 pt-4 border-t border-gray-100">
+            <div class="text-sm text-gray-600">
+              <span class="font-semibold text-teal-600">Result:</span> KES 550K debt reduction
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="#start" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-600 to-teal-700 text-white font-bold rounded-xl hover:from-teal-700 hover:to-teal-800 transition shadow-lg">
+          Join Thousands of Success Stories <i class="fas fa-users ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Simple, Transparent Pricing
+        </h2>
+        <p class="text-xl text-gray-600">
+          No hidden fees. No monthly subscriptions. Just one affordable payment to get started.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Free Assessment -->
+          <div class="bg-gray-50 p-8 rounded-2xl border-2 border-gray-200">
+            <div class="text-center">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Free Assessment</h3>
+              <div class="text-5xl font-bold text-gray-900 mb-2">KES 0</div>
+              <p class="text-gray-600 mb-8">Complete debt analysis & personalized recommendations</p>
+              
+              <div class="space-y-4 mb-8 text-left">
+                <div class="flex items-center">
+                  <i class="fas fa-check text-green-600 mr-3"></i>
+                  <span>Complete debt assessment</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-check text-green-600 mr-3"></i>
+                  <span>Personalized action plan</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-check text-green-600 mr-3"></i>
+                  <span>No obligation consultation</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-check text-green-600 mr-3"></i>
+                  <span>Expert recommendations</span>
+                </div>
+              </div>
+
+              <a href="#start" class="block w-full py-3 bg-gray-800 text-white font-bold rounded-xl hover:bg-gray-900 transition">
+                Start Free Assessment
+              </a>
+            </div>
+          </div>
+
+          <!-- Full Service -->
+          <div class="bg-gradient-to-br from-teal-500 to-teal-700 p-8 rounded-2xl text-white relative overflow-hidden">
+            <!-- Popular Badge -->
+            <div class="absolute -right-8 top-8 bg-yellow-400 text-gray-900 px-8 py-1 text-sm font-bold transform rotate-45">
+              Most Popular
+            </div>
+            
+            <div class="text-center">
+              <h3 class="text-2xl font-bold mb-4">Complete Solution</h3>
+              <div class="text-5xl font-bold mb-2">KES 1,000</div>
+              <p class="text-teal-100 mb-8">One-time activation fee. Everything included.</p>
+              
+              <div class="space-y-4 mb-8 text-left">
+                <div class="flex items-center">
+                  <i class="fas fa-check text-yellow-300 mr-3"></i>
+                  <span>Everything in Free Assessment</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-check text-yellow-300 mr-3"></i>
+                  <span>CRB report from all bureaus</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-check text-yellow-300 mr-3"></i>
+                  <span>Expert negotiation services</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-check text-yellow-300 mr-3"></i>
+                  <span>Credit score monitoring</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-check text-yellow-300 mr-3"></i>
+                  <span>Financial marketplace access</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-check text-yellow-300 mr-3"></i>
+                  <span>24/7 customer support</span>
+                </div>
+              </div>
+
+              <a href="#start" class="block w-full py-3 bg-white text-teal-700 font-bold rounded-xl hover:bg-gray-100 transition">
+                Activate My Account
+              </a>
+              
+              <p class="text-xs text-teal-100 mt-4">
+                30-day money-back guarantee
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="mt-12 text-center">
+          <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+            <h4 class="font-bold text-blue-900 mb-3">What happens after payment?</h4>
+            <p class="text-blue-800 text-sm">
+              Our expert team immediately begins working on your case. You'll receive your comprehensive debt analysis within 48 hours and we'll start negotiations with your creditors within 1 week.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-xl text-gray-600">
+          Get answers to the most common questions about our debt relief services
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto" x-data="{ openFaq: null }">
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <div class="bg-white rounded-xl shadow-sm border">
+            <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" 
+                    @click="openFaq = openFaq === 1 ? null : 1">
+              <span class="font-semibold text-gray-900">How long does the debt relief process take?</span>
+              <i class="fas fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 1 }"></i>
+            </button>
+            <div x-show="openFaq === 1" x-collapse class="px-6 pb-4">
+              <p class="text-gray-600">
+                Most clients see results within 2-4 weeks. The complete process typically takes 3-6 months depending on the complexity of your debt situation and the number of creditors involved.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="bg-white rounded-xl shadow-sm border">
+            <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" 
+                    @click="openFaq = openFaq === 2 ? null : 2">
+              <span class="font-semibold text-gray-900">Will this affect my credit score?</span>
+              <i class="fas fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 2 }"></i>
+            </button>
+            <div x-show="openFaq === 2" x-collapse class="px-6 pb-4">
+              <p class="text-gray-600">
+                Initially, there may be a temporary impact, but our CRB repair services actively work to improve your score. Most clients see score improvements within 3-6 months as we resolve errors and negotiate positive reporting.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="bg-white rounded-xl shadow-sm border">
+            <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" 
+                    @click="openFaq = openFaq === 3 ? null : 3">
+              <span class="font-semibold text-gray-900">What types of debt can you help with?</span>
+              <i class="fas fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 3 }"></i>
+            </button>
+            <div x-show="openFaq === 3" x-collapse class="px-6 pb-4">
+              <p class="text-gray-600">
+                We help with all types of unsecured debt including mobile loans, bank personal loans, credit cards, Sacco loans, microfinance loans, and digital lending platform debts.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="bg-white rounded-xl shadow-sm border">
+            <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" 
+                    @click="openFaq = openFaq === 4 ? null : 4">
+              <span class="font-semibold text-gray-900">Is my information secure?</span>
+              <i class="fas fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 4 }"></i>
+            </button>
+            <div x-show="openFaq === 4" x-collapse class="px-6 pb-4">
+              <p class="text-gray-600">
+                Absolutely. We use bank-level 256-bit SSL encryption and are registered with the Central Bank of Kenya. Your data is protected by the strictest security protocols and never shared without your consent.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="bg-white rounded-xl shadow-sm border">
+            <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" 
+                    @click="openFaq = openFaq === 5 ? null : 5">
+              <span class="font-semibold text-gray-900">What if I'm not satisfied with the service?</span>
+              <i class="fas fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 5 }"></i>
+            </button>
+            <div x-show="openFaq === 5" x-collapse class="px-6 pb-4">
+              <p class="text-gray-600">
+                We offer a 30-day money-back guarantee. If you're not completely satisfied with our service within the first 30 days, we'll refund your activation fee, no questions asked.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Final CTA -->
-  <section class="bg-teal-600 py-16 text-center text-white">
-    <h2 class="text-3xl font-bold">Stop Juggling Multiple Loans</h2>
-    <p class="mt-2">Start your journey to financial freedom today.</p>
-    <div class="mt-6">
-      <a href="#start" class="px-8 py-4 bg-white text-teal-600 rounded-lg font-semibold hover:bg-gray-100">Start My Free Assessment</a>
+  <section class="py-20 bg-gradient-to-r from-teal-600 via-teal-700 to-blue-600">
+    <div class="container mx-auto px-6 text-center">
+      <div class="max-w-4xl mx-auto text-white">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">
+          Your Journey to Financial Freedom Starts Here
+        </h2>
+        <p class="text-xl md:text-2xl mb-8 text-teal-100">
+          Join 10,000+ Kenyans who've successfully conquered their debt with Laimat Credit IQ
+        </p>
+        
+        <!-- Benefits Grid -->
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+            <div class="text-3xl mb-3">⚡</div>
+            <h3 class="font-bold mb-2">Quick Results</h3>
+            <p class="text-sm text-teal-100">See improvements in as little as 2 weeks</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+            <div class="text-3xl mb-3">🛡️</div>
+            <h3 class="font-bold mb-2">100% Secure</h3>
+            <p class="text-sm text-teal-100">CBK registered and fully licensed</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+            <div class="text-3xl mb-3">💰</div>
+            <h3 class="font-bold mb-2">Guaranteed Savings</h3>
+            <p class="text-sm text-teal-100">Average 60% reduction in monthly payments</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#start" class="px-10 py-5 bg-white text-teal-700 text-xl font-bold rounded-2xl hover:bg-gray-100 transition shadow-2xl hover-lift inline-flex items-center justify-center">
+            <i class="fas fa-rocket mr-3"></i>
+            Start My Free Assessment
+          </a>
+          <a href="tel:+254700000000" class="px-10 py-5 bg-transparent border-2 border-white text-white text-xl font-bold rounded-2xl hover:bg-white hover:text-teal-700 transition inline-flex items-center justify-center">
+            <i class="fas fa-phone mr-3"></i>
+            Call Now: 0700 000 000
+          </a>
+        </div>
+
+        <p class="text-sm text-teal-100 mt-6">
+          Free consultation • No obligation • 30-day money-back guarantee
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-900 text-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Get in Touch
+        </h2>
+        <p class="text-xl text-gray-300">
+          Ready to start your journey? Our expert team is here to help.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <!-- Contact Info -->
+        <div>
+          <div class="space-y-8">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-phone text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-2">Phone Support</h3>
+                <p class="text-gray-300">Call us 24/7 for immediate assistance</p>
+                <a href="tel:+254700000000" class="text-teal-400 font-semibold hover:text-teal-300">+254 700 000 000</a>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i class="fab fa-whatsapp text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-2">WhatsApp</h3>
+                <p class="text-gray-300">Quick support via WhatsApp</p>
+                <a href="https://wa.me/254700000000" class="text-teal-400 font-semibold hover:text-teal-300">+254 700 000 000</a>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-envelope text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-2">Email</h3>
+                <p class="text-gray-300">Send us your questions anytime</p>
+                <a href="mailto:support@laimat.co.ke" class="text-teal-400 font-semibold hover:text-teal-300">support@laimat.co.ke</a>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-map-marker-alt text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-2">Office</h3>
+                <p class="text-gray-300">Visit us during business hours</p>
+                <p class="text-teal-400">Westlands, Nairobi</p>
+                <p class="text-gray-300 text-sm">Mon-Fri: 8AM-6PM, Sat: 9AM-1PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Contact Form -->
+        <div class="bg-gray-800 p-8 rounded-2xl">
+          <h3 class="text-2xl font-bold mb-6">Quick Contact Form</h3>
+          <form class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+              <input type="text" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="Enter your full name">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+              <input type="tel" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="0700 000 000">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">Total Debt Amount</label>
+              <select class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                <option>Less than KES 100,000</option>
+                <option>KES 100,000 - 500,000</option>
+                <option>KES 500,000 - 1,000,000</option>
+                <option>Over KES 1,000,000</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+              <textarea rows="4" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="Tell us about your debt situation..."></textarea>
+            </div>
+            <button type="submit" class="w-full py-3 bg-gradient-to-r from-teal-600 to-teal-700 text-white font-bold rounded-lg hover:from-teal-700 hover:to-teal-800 transition">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-300 py-10">
-    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
-      <div>
-        <h3 class="font-semibold text-lg text-white">Laimat Credit IQ</h3>
-        <p class="mt-2 text-sm">Kenya’s first 360° loan relief platform.</p>
+  <footer class="bg-gray-950 text-gray-300">
+    <div class="container mx-auto px-6 py-12">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Company Info -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center space-x-3 mb-6">
+            <div class="w-10 h-10 bg-gradient-to-br from-teal-500 to-teal-700 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-lg">L</span>
+            </div>
+            <div>
+              <h1 class="text-xl font-bold text-white">Laimat Credit IQ</h1>
+              <p class="text-xs text-gray-400">Debt Relief Platform</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed mb-6">
+            Kenya's most trusted debt relief platform, helping thousands of Kenyans regain their financial freedom through expert debt consolidation, restructuring, and credit repair services.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-teal-600 transition">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-teal-600 transition">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="font-bold text-white text-lg mb-6">Our Services</h3>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#services" class="hover:text-teal-400 transition">Debt Consolidation</a></li>
+            <li><a href="#services" class="hover:text-teal-400 transition">Debt Restructuring</a></li>
+            <li><a href="#services" class="hover:text-teal-400 transition">Expert Negotiation</a></li>
+            <li><a href="#services" class="hover:text-teal-400 transition">CRB Repair</a></li>
+            <li><a href="#services" class="hover:text-teal-400 transition">Credit Monitoring</a></li>
+            <li><a href="#services" class="hover:text-teal-400 transition">Financial Marketplace</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="font-bold text-white text-lg mb-6">Quick Links</h3>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#how" class="hover:text-teal-400 transition">How It Works</a></li>
+            <li><a href="#pricing" class="hover:text-teal-400 transition">Pricing</a></li>
+            <li><a href="#faq" class="hover:text-teal-400 transition">FAQ</a></li>
+            <li><a href="#start" class="hover:text-teal-400 transition">Free Assessment</a></li>
+            <li><a href="#" class="hover:text-teal-400 transition">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-teal-400 transition">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="font-bold text-white text-lg mb-6">Contact Us</h3>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center space-x-3">
+              <i class="fas fa-phone text-teal-400 w-4"></i>
+              <a href="tel:+254700000000" class="hover:text-teal-400 transition">+254 700 000 000</a>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="fas fa-envelope text-teal-400 w-4"></i>
+              <a href="mailto:support@laimat.co.ke" class="hover:text-teal-400 transition">support@laimat.co.ke</a>
+            </div>
+            <div class="flex items-start space-x-3">
+              <i class="fas fa-map-marker-alt text-teal-400 w-4 mt-1"></i>
+              <div>
+                <p>Westlands, Nairobi</p>
+                <p class="text-gray-400">Kenya</p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="fas fa-clock text-teal-400 w-4"></i>
+              <div>
+                <p>Mon-Fri: 8AM-6PM</p>
+                <p class="text-gray-400">Sat: 9AM-1PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <h4 class="font-semibold text-white">Quick Links</h4>
-        <ul class="mt-2 space-y-1 text-sm">
-          <li><a href="#services" class="hover:text-white">Services</a></li>
-          <li><a href="#pricing" class="hover:text-white">Pricing</a></li>
-          <li><a href="#start" class="hover:text-white">Start Assessment</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold text-white">Contact</h4>
-        <p class="mt-2 text-sm">support@laimat.co.ke</p>
+
+      <!-- Bottom Footer -->
+      <div class="border-t border-gray-800 mt-12 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="text-sm text-gray-400 mb-4 md:mb-0">
+            © 2025 Laimat Credit IQ. All rights reserved. Licensed by Central Bank of Kenya.
+          </div>
+          <div class="flex items-center space-x-6 text-sm">
+            <a href="#" class="text-gray-400 hover:text-teal-400 transition">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-teal-400 transition">Terms of Service</a>
+            <a href="#" class="text-gray-400 hover:text-teal-400 transition">Cookie Policy</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="mt-8 text-center text-sm text-gray-500">© 2025 Laimat Credit IQ. All rights reserved.</div>
   </footer>
 
+  <!-- Assessment Modal/Form (Hidden initially) -->
+  <div id="start" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" x-data="{ step: 1 }" x-show="false">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="p-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold text-gray-900 mb-2">Free Debt Assessment</h2>
+          <p class="text-gray-600">Get your personalized debt relief plan in minutes</p>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="mb-8">
+          <div class="flex justify-between text-xs text-gray-500 mb-2">
+            <span>Step 1: Basic Info</span>
+            <span>Step 2: Debt Details</span>
+            <span>Step 3: Contact</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-teal-600 h-2 rounded-full transition-all duration-300" 
+                 :style="`width: ${(step / 3) * 100}%`"></div>
+          </div>
+        </div>
+
+        <!-- Form Steps -->
+        <form class="space-y-6">
+          <!-- Step 1: Basic Info -->
+          <div x-show="step === 1" x-transition>
+            <div class="space-y-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Monthly Income</label>
+                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                  <option>Less than KES 20,000</option>
+                  <option>KES 20,000 - 50,000</option>
+                  <option>KES 50,000 - 100,000</option>
+                  <option>KES 100,000 - 200,000</option>
+                  <option>Over KES 200,000</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Employment Status</label>
+                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                  <option>Full-time Employee</option>
+                  <option>Part-time Employee</option>
+                  <option>Self-employed</option>
+                  <option>Business Owner</option>
+                  <option>Unemployed</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">County</label>
+                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                  <option>Nairobi</option>
+                  <option>Mombasa</option>
+                  <option>Kisumu</option>
+                  <option>Nakuru</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Debt Details -->
+          <div x-show="step === 2" x-transition>
+            <div class="space-y-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Total Debt Amount</label>
+                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                  <option>Less than KES 50,000</option>
+                  <option>KES 50,000 - 200,000</option>
+                  <option>KES 200,000 - 500,000</option>
+                  <option>KES 500,000 - 1,000,000</option>
+                  <option>Over KES 1,000,000</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Number of Creditors</label>
+                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                  <option>1-2 creditors</option>
+                  <option>3-5 creditors</option>
+                  <option>6-10 creditors</option>
+                  <option>More than 10 creditors</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Types of Debt (check all that apply)</label>
+                <div class="grid grid-cols-2 gap-3">
+                  <label class="flex items-center space-x-2">
+                    <input type="checkbox" class="text-teal-600 focus:ring-teal-500">
+                    <span class="text-sm">Mobile Loans</span>
+                  </label>
+                  <label class="flex items-center space-x-2">
+                    <input type="checkbox" class="text-teal-600 focus:ring-teal-500">
+                    <span class="text-sm">Bank Loans</span>
+                  </label>
+                  <label class="flex items-center space-x-2">
+                    <input type="checkbox" class="text-teal-600 focus:ring-teal-500">
+                    <span class="text-sm">Credit Cards</span>
+                  </label>
+                  <label class="flex items-center space-x-2">
+                    <input type="checkbox" class="text-teal-600 focus:ring-teal-500">
+                    <span class="text-sm">Sacco Loans</span>
+                  </label>
+                  <label class="flex items-center space-x-2">
+                    <input type="checkbox" class="text-teal-600 focus:ring-teal-500">
+                    <span class="text-sm">Microfinance</span>
+                  </label>
+                  <label class="flex items-center space-x-2">
+                    <input type="checkbox" class="text-teal-600 focus:ring-teal-500">
+                    <span class="text-sm">Other</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Contact Info -->
+          <div x-show="step === 3" x-transition>
+            <div class="space-y-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="Enter your full name">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="0700 000 000">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="your@email.com">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Best Time to Call</label>
+                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                  <option>Morning (8AM - 12PM)</option>
+                  <option>Afternoon (12PM - 5PM)</option>
+                  <option>Evening (5PM - 8PM)</option>
+                  <option>Anytime</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="flex justify-between pt-6">
+            <button type="button" 
+                    x-show="step > 1" 
+                    @click="step--" 
+                    class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
+              Previous
+            </button>
+            
+            <button type="button" 
+                    x-show="step < 3" 
+                    @click="step++" 
+                    class="px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition ml-auto">
+              Next Step
+            </button>
+            
+            <button type="submit" 
+                    x-show="step === 3" 
+                    class="px-6 py-3 bg-gradient-to-r from-teal-600 to-teal-700 text-white rounded-lg hover:from-teal-700 hover:to-teal-800 transition ml-auto">
+              Get My Free Assessment
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-teal-600 text-white rounded-full shadow-lg hover:bg-teal-700 transition opacity-0 pointer-events-none z-40">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Custom JavaScript -->
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Back to top button
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+        backToTopButton.classList.add('opacity-100');
+      } else {
+        backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+        backToTopButton.classList.remove('opacity-100');
+      }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Animate counters on scroll
+    const animateCounters = () => {
+      const counters = document.querySelectorAll('.stats-counter');
+      
+      counters.forEach(counter => {
+        const target = parseInt(counter.textContent);
+        const increment = target / 100;
+        let current = 0;
+        
+        const updateCounter = () => {
+          if (current < target) {
+            current += increment;
+            counter.textContent = Math.ceil(current);
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target;
+          }
+        };
+        
+        updateCounter();
+      });
+    };
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.hover-lift').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
 </body>
-</html>
+</html>teal-600 transition">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-teal-600 transition">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-
