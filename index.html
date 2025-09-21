@@ -21,8 +21,8 @@
 
     <!-- Desktop Menu -->
     <div class="hidden md:flex items-center space-x-8 text-white font-medium">
-      <a href="#services" class="hover:text-teal-200 transition">Services</a>
       <a href="#how" class="hover:text-teal-200 transition">How It Works</a>
+      <a href="#services" class="hover:text-teal-200 transition">Services</a>
       <a href="#pricing" class="hover:text-teal-200 transition">Pricing</a>
       <a href="#contact" class="hover:text-teal-200 transition">Contact</a>
       <a href="#login" class="px-4 py-2 rounded-lg border border-white hover:bg-white hover:text-teal-600 transition">Login</a>
@@ -48,8 +48,8 @@
        x-transition:leave-end="translate-x-full"
        @click.away="open = false">
     <div class="flex flex-col p-6 space-y-6 text-white font-medium">
-      <a href="#services" class="hover:text-teal-200 transition">Services</a>
       <a href="#how" class="hover:text-teal-200 transition">How It Works</a>
+      <a href="#services" class="hover:text-teal-200 transition">Services</a>
       <a href="#pricing" class="hover:text-teal-200 transition">Pricing</a>
       <a href="#contact" class="hover:text-teal-200 transition">Contact</a>
       <a href="#login" class="px-4 py-2 rounded-lg border border-white hover:bg-white hover:text-teal-600 transition">Login</a>
@@ -98,7 +98,7 @@
 
 
   <!-- How It Works -->
-<section class="bg-gray-50 py-20">
+<section class="bg-gray-50 py-20" id="how">
   <div class="container mx-auto px-6">
     <!-- Heading -->
     <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-800">
@@ -162,38 +162,88 @@
 </section>
 
 
-  <!-- Services -->
-  <section id="services" class="bg-gray-100 py-16">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center">Our Services</h2>
-      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
-          <h3 class="font-semibold text-xl mb-2">💳 Debt Consolidation</h3>
-          <p>Combine all your debts into one affordable monthly payment. We match you with qualified lenders.</p>
+ <!-- Services -->
+<section id="services" class="bg-gray-50 py-20">
+  <div class="container mx-auto px-6">
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-800">
+      Our Services
+    </h2>
+    <p class="mt-4 text-center text-gray-600 max-w-2xl mx-auto">
+      A complete suite of solutions designed to help you regain control of your finances and build a brighter future.
+    </p>
+
+    <!-- Services Grid -->
+    <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- Service 1 -->
+      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
+        <div class="w-14 h-14 flex items-center justify-center bg-teal-100 text-teal-600 rounded-full text-2xl mb-6">
+          💳
         </div>
-        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
-          <h3 class="font-semibold text-xl mb-2">🔄 Debt Restructuring</h3>
-          <p>Renegotiate repayment terms—longer schedules, lower installments, or reduced penalties.</p>
+        <h3 class="font-semibold text-xl text-gray-800 mb-3">Debt Consolidation</h3>
+        <p class="text-gray-600">
+          Combine all your debts into one affordable monthly payment. We match you with qualified lenders.
+        </p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
+        <div class="w-14 h-14 flex items-center justify-center bg-teal-100 text-teal-600 rounded-full text-2xl mb-6">
+          🔄
         </div>
-        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
-          <h3 class="font-semibold text-xl mb-2">🤝 Debt Negotiation</h3>
-          <p>Our experts negotiate with creditors on your behalf to stop harassment and reduce penalties.</p>
+        <h3 class="font-semibold text-xl text-gray-800 mb-3">Debt Restructuring</h3>
+        <p class="text-gray-600">
+          Renegotiate repayment terms—longer schedules, lower installments, or reduced penalties.
+        </p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
+        <div class="w-14 h-14 flex items-center justify-center bg-teal-100 text-teal-600 rounded-full text-2xl mb-6">
+          🤝
         </div>
-        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
-          <h3 class="font-semibold text-xl mb-2">📝 CRB Services</h3>
-          <p>We pull your records from all major CRBs, help fix errors, and improve your credit score.</p>
+        <h3 class="font-semibold text-xl text-gray-800 mb-3">Debt Negotiation</h3>
+        <p class="text-gray-600">
+          Our experts negotiate with creditors on your behalf to stop harassment and reduce penalties.
+        </p>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
+        <div class="w-14 h-14 flex items-center justify-center bg-teal-100 text-teal-600 rounded-full text-2xl mb-6">
+          📝
         </div>
-        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
-          <h3 class="font-semibold text-xl mb-2">📊 Analytics & Insights</h3>
-          <p>Track your debt exposure, income balance, and eligibility with your Credit IQ Dashboard.</p>
+        <h3 class="font-semibold text-xl text-gray-800 mb-3">CRB Services</h3>
+        <p class="text-gray-600">
+          We pull your records from all major CRBs, help fix errors, and improve your credit score.
+        </p>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
+        <div class="w-14 h-14 flex items-center justify-center bg-teal-100 text-teal-600 rounded-full text-2xl mb-6">
+          📊
         </div>
-        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
-          <h3 class="font-semibold text-xl mb-2">🌐 Affiliate Marketplace</h3>
-          <p>Access trusted partners for savings, insurance, and financial growth opportunities.</p>
+        <h3 class="font-semibold text-xl text-gray-800 mb-3">Analytics & Insights</h3>
+        <p class="text-gray-600">
+          Track your debt exposure, income balance, and eligibility with your Credit IQ Dashboard.
+        </p>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
+        <div class="w-14 h-14 flex items-center justify-center bg-teal-100 text-teal-600 rounded-full text-2xl mb-6">
+          🌐
         </div>
+        <h3 class="font-semibold text-xl text-gray-800 mb-3">Affiliate Marketplace</h3>
+        <p class="text-gray-600">
+          Access trusted partners for savings, insurance, and financial growth opportunities.
+        </p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Pricing -->
   <section class="container mx-auto px-6 py-16 text-center">
