@@ -42,6 +42,16 @@
     .hover-lift:hover {
       transform: translateY(-5px);
     }
+
+    @keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -183,19 +193,26 @@
     </div>
   </section>
 
-  <!-- Trust Indicators -->
-  <section class="py-12 bg-white border-b">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-8">
-        <p class="text-gray-600 font-medium">Trusted by leading institutions</p>
-      </div>
-      <div class="flex justify-center items-center space-x-12 opacity-60">
-        <div class="text-2xl font-bold text-gray-400">TransUnion Partner</div>
-        <div class="text-2xl font-bold text-gray-400">Metropol CRB</div>
-        <div class="text-2xl font-bold text-gray-400">CreditInfo Partner</div>
+ <!-- Trust Indicators -->
+<section class="py-12 bg-white border-b relative overflow-hidden">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-8">
+      <p class="text-gray-600 font-medium">Trusted by leading institutions</p>
+    </div>
+
+    <!-- Logo Carousel -->
+    <div class="overflow-hidden relative">
+      <div class="flex items-center space-x-12 animate-scroll">
+        <!-- Replace with actual logo images -->
+        <img src="transunion.svg" alt="TransUnion Partner" class="h-12 object-contain grayscale hover:grayscale-0 transition" />
+        <img src="metro.png" alt="Metropol CRB" class="h-12 object-contain grayscale hover:grayscale-0 transition" />
+        <img src="creditinfo.svg" alt="CreditInfo Partner" class="h-12 object-contain grayscale hover:grayscale-0 transition" />
+        <img src="kbalogo.png" alt="Experian" class="h-12 object-contain grayscale hover:grayscale-0 transition" />
+        <img src="kusco.png" alt="Equifax" class="h-12 object-contain grayscale hover:grayscale-0 transition" />
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Problem Statement -->
   <section class="py-20 bg-red-50">
